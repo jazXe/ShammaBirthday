@@ -56,9 +56,10 @@ function showNextLine() {
 
 function startScene2() {
   document.querySelector('.story-container').style.display = 'none';
+  document.getElementById('sparkle-canvas').style.display = 'none';
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
-  
-  scene2.style.display = 'flex';
+
+  scene2.style.display = 'block';
 
   setTimeout(() => {
     owl.style.transform = 'translate(-50%, -50%) scale(2)';
