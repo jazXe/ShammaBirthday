@@ -1,6 +1,6 @@
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
-const calendarContainer = document.getElementById('calendar-container');
+const calendar = document.getElementById('calendar');
 
 const storyLines = [
   "Once upon a time...",
@@ -22,7 +22,7 @@ function showNextLine() {
       storyText.style.opacity = 1;
 
       if (storyLines[currentLine].includes("April 28th")) {
-        calendarContainer.style.display = 'flex';
+        calendar.style.display = 'block';
       }
 
       currentLine++;
