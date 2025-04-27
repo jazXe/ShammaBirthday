@@ -1,12 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #3b2742; /* Dark purple */
+  background-color: #3b2742;
   font-family: 'Bigelow Rules', cursive;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  color: #fefae0; /* Soft cream color */
+  color: #fefae0;
 }
 
 /* Sparkles canvas */
@@ -114,16 +114,34 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Continue button */
-.next-btn {
-  margin-top: 40px;
-  padding: 10px 30px;
-  font-size: 1.5em;
+/* Scene 2 Owl */
+.owl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 1;
+  transition: transform 3s ease, opacity 2s ease;
+  z-index: 5;
+}
+
+/* Birthday Message */
+.birthday-message {
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  text-align: center;
+  color: #f4b400;
   font-family: 'Bigelow Rules', cursive;
-  background-color: #f4b400;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #3b2742;
-  animation: glow 1s infinite alternate;
+  font-size: 2em;
+  opacity: 0;
+  z-index: 6;
+  transition: opacity 2s ease;
+}
+
+.highlight {
+  font-size: 2.5em;
+  color: #f4b400;
+  text-shadow: 0 0 10px #f4b400, 0 0 20px #f4b400;
 }
