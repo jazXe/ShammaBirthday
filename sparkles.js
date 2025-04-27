@@ -26,8 +26,8 @@ function createStars(count) {
 createStars(100);
 
 function drawStars() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); /* Clear canvas */
-  ctx.fillStyle = '#fefae0'; /* Soft white sparkles */
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#fefae0'; /* Soft white for sparkles */
   for (let star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
