@@ -72,25 +72,28 @@ function startScene2() {
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
   document.getElementById('scene2').style.display = 'block';
 
+  // Owl appear + grow
   setTimeout(() => {
-    owl.style.transform = 'translate(-50%, -50%) scale(4.5)';
+    owl.style.transform = 'translate(-50%, -50%) scale(3.2)';
   }, 200);
 
+  // Owl fades away
   setTimeout(() => {
     owl.style.opacity = 0;
   }, 3500);
 
+  // Letter appears
   setTimeout(() => {
     letter.style.display = 'block';
-    gryffindorLogo.style.display = 'block';
   }, 5000);
 
+  // Start Birthday text
   setTimeout(() => {
     showBirthdayLines();
   }, 5500);
 }
 
-// Birthday Text Line by Line
+// Birthday lines one by one
 const birthdayLines = [
   "Hogwarts and Gryffindor",
   "send their warmest wishes to you!",
