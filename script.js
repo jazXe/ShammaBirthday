@@ -28,10 +28,12 @@ function showNextLine() {
   if (currentLine < storyLines.length) {
     // Fade out current text first
     storyText.style.opacity = 0;
-    shammaName.style.opacity = 0; // Hide Shamma text at fade out
+    shammaName.style.opacity = 0; // Always fade out Shamma too
 
     setTimeout(() => {
-      // Special actions depending on the text
+      // Always set new small story line text
+      storyText.textContent = storyLines[currentLine];
+      storyText.style.opacity = 1; // Fade it back in
 
       // 📅 Show calendar at April 28
       if (storyLines[currentLine].includes("April 28th")) {
@@ -40,26 +42,19 @@ function showNextLine() {
         shammaName.style.display = 'none';
       }
 
-      // 📜 Switch to Shamma image at Whispers
+      // 📜 At Whispers
       if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
         calendar.style.display = 'none';
         shammaImg.style.display = 'block';
         shammaName.style.display = 'none';
       }
 
-      // ✨ At celebration, show small story text + big glowing Shamma
+      // ✨ At celebration, also show glowing Shamma
       if (storyLines[currentLine].includes("A celebration was brewing")) {
-        storyText.textContent = storyLines[currentLine]; // ✅ Keep showing "A celebration..."
-        storyText.style.opacity = 1; // ✅ Fade in normal small text
-        shammaName.style.display = 'block'; // ✅ Also show big glowing "Shamma"
+        shammaName.style.display = 'block'; // Show big Shamma
         setTimeout(() => {
-          shammaName.style.opacity = 1; // Fade in Shamma smoothly
+          shammaName.style.opacity = 1; // Fade in smoothly
         }, 200);
-      } else {
-        // Normal story text
-        storyText.textContent = storyLines[currentLine];
-        storyText.style.opacity = 1;
-        shammaName.style.display = 'none'; // Hide big Shamma if not at final
       }
 
       currentLine++;
@@ -71,7 +66,7 @@ function showNextLine() {
   }
 }
 
-// --- Scene 2 ---
+// --- 🎯 Scene 2 (Owl + Letter) ---
 // When Continue button clicked
 nextBtn.addEventListener('click', startScene2);
 
@@ -100,5 +95,5 @@ function startScene2() {
     letter.style.display = 'block';
     birthdayText.style.display = 'block';
     gryffindorLogo.style.display = 'block';
-  }, 5500); // After owl disappears
+  }, 5500); // After Owl disappears
 }
