@@ -73,7 +73,7 @@ function startScene2() {
   document.getElementById('scene2').style.display = 'block';
 
   setTimeout(() => {
-    owl.style.transform = 'translate(-50%, -50%) scale(2.5)';
+    owl.style.transform = 'translate(-50%, -50%) scale(4.5)';
   }, 200);
 
   setTimeout(() => {
