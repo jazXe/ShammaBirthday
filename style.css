@@ -81,7 +81,7 @@ body {
 .story-text {
   font-size: 2.5em;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 1.5s ease;
 }
 
 /* Calendar image */
@@ -99,12 +99,13 @@ body {
 
 /* Big glowing Shamma name */
 .shamma-name {
-  font-family: 'Bigelow Rules', cursive;
+ font-family: 'Bigelow Rules', cursive;
   font-size: 4em;
   color: #f9dfad;
   text-shadow: 0 0 10px #f9dfad, 0 0 20px #f9dfad;
   margin-top: 20px;
-  display: none;
+  opacity: 0; /* Start hidden */
+  transition: opacity 1.5s ease; /* Smooth glowing Shamma text fade */
 }
 
 /* Shamma image style */
