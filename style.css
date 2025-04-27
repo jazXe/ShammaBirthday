@@ -1,59 +1,49 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #1a1035; /* Dark purple magical background */
+  color: #f4b400; /* Golden text */
+  font-family: 'Bigelow Rules', cursive;
   height: 100vh;
-  background-color: #3b2742; /* Dark purple background */
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Bigelow Rules', cursive;
-  color: #f4b400; /* Warm golden color */
-  text-align: center;
   overflow: hidden;
 }
 
-/* Glowing animation for title */
-h1 {
-  font-size: 3em;
-  text-shadow: 2px 2px 5px #000;
-  animation: glow 2s infinite alternate;
+.story-container {
+  text-align: center;
+  padding: 20px;
 }
 
-/* Subtext */
-p {
+.story-text {
+  font-size: 2.5em;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.next-btn {
+  margin-top: 30px;
+  padding: 10px 30px;
   font-size: 1.5em;
-  margin-top: 10px;
-}
-
-/* Glowing effect */
-@keyframes glow {
-  from { text-shadow: 0 0 10px #f4b400, 0 0 20px #f4b400; }
-  to { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
-}
-
-/* Castle image styling */
-.castle {
-  width: 400px;
-  margin-top: 20px;
-}
-
-/* Gryffindor crest styling */
-.gryffindor-crest {
-  width: 150px;
-  margin-top: 20px;
+  font-family: 'Bigelow Rules', cursive;
+  background-color: #f4b400;
+  border: none;
   border-radius: 10px;
-  border: 2px solid #f4b400;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 10px;
+  cursor: pointer;
+  color: #3b2742;
+  animation: glow 1s infinite alternate;
+  display: none; /* hidden until story finishes */
 }
 
-/* Spell text */
-.spell {
-  margin-top: 20px;
-  font-size: 1.2em;
-  font-style: italic;
-  color: #ffffff;
+@keyframes glow {
+  from { box-shadow: 0 0 5px #f4b400; }
+  to { box-shadow: 0 0 20px #f4b400; }
 }
