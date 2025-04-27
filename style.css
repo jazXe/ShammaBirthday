@@ -1,159 +1,75 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #3b2742;
-  font-family: 'Bigelow Rules', cursive;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  color: #fefae0;
+const storyText = document.getElementById('story-text');
+const calendar = document.getElementById('calendar');
+const shammaImg = document.getElementById('shamma-img');
+const shammaName = document.getElementById('shamma-name');
+const scene2 = document.getElementById('scene2');
+const owl = document.getElementById('owl');
+const birthdayMessage = document.getElementById('birthday-message');
+
+const storyLines = [
+  "Once upon a time...",
+  "In a hidden corner of the wizarding world...",
+  "There lived a brave soul destined for greatness...",
+  "On a fateful day, April 28th...",
+  "The skies were alive with the flight of dragons...",
+  "Whispers traveled across the halls of Hogwarts...",
+  "A celebration was brewing for a young witch named..."
+];
+
+let currentLine = 0;
+
+function showNextLine() {
+  if (currentLine < storyLines.length) {
+    storyText.style.opacity = 0;
+    shammaName.style.opacity = 0;
+
+    setTimeout(() => {
+      storyText.textContent = storyLines[currentLine];
+      storyText.style.opacity = 1;
+
+      if (storyLines[currentLine].includes("April 28th")) {
+        calendar.style.display = 'block';
+        shammaImg.style.display = 'none';
+        shammaName.style.display = 'none';
+      }
+
+      if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
+        calendar.style.display = 'none';
+        shammaImg.style.display = 'block';
+        shammaName.style.display = 'none';
+      }
+
+      if (storyLines[currentLine].includes("A celebration was brewing")) {
+        shammaName.style.display = 'block';
+        setTimeout(() => {
+          shammaName.style.opacity = 1;
+        }, 200);
+      }
+
+      currentLine++;
+      setTimeout(showNextLine, 3500);
+    }, 1000);
+  } else {
+    setTimeout(startScene2, 2000);
+  }
 }
 
-/* Sparkles canvas */
-#sparkle-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
+function startScene2() {
+  document.querySelector('.story-container').style.display = 'none';
+  document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
+  
+  scene2.style.display = 'flex';
 
-/* Dragons */
-.dragon {
-  position: absolute;
-  width: 120px;
-  top: 20%;
-  z-index: 1;
-  animation: floatDragon 4s ease-in-out infinite;
-}
+  setTimeout(() => {
+    owl.style.transform = 'translate(-50%, -50%) scale(15)'; // GROW owl 15x
+  }, 200);
 
-.dragon-left {
-  left: 5%;
-}
+  setTimeout(() => {
+    owl.style.opacity = 0;
+  }, 3500);
 
-.dragon-right {
-  right: 5%;
-}
-
-@keyframes floatDragon {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* Start button */
-.start-container {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  z-index: 5;
-}
-
-.start-btn {
-  font-family: 'Bigelow Rules', cursive;
-  font-size: 2em;
-  padding: 15px 40px;
-  background-color: #f4b400;
-  border: none;
-  border-radius: 15px;
-  color: #3b2742;
-  cursor: pointer;
-  animation: glow 1s infinite alternate;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 5px #f4b400; }
-  to { box-shadow: 0 0 20px #f4b400; }
-}
-
-/* Story container */
-.story-container {
-  position: relative;
-  z-index: 2;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Story text */
-.story-text {
-  font-size: 2.5em;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-/* Big glowing Shamma */
-.shamma-name {
-  font-family: 'Bigelow Rules', cursive;
-  font-size: 4em;
-  color: #f9dfad;
-  text-shadow: 0 0 10px #f9dfad, 0 0 20px #f9dfad;
-  margin-top: 20px;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-/* Shamma image */
-.shamma-img {
-  width: 250px;
-  margin-top: 20px;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Calendar image */
-.calendar-img {
-  width: 300px;
-  margin-top: 10px;
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Scene 2 */
-#scene2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 3;
-}
-
-/* Owl */
-.owl {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  transform: translate(-50%, -50%) scale(0.5);
-  opacity: 1;
-  transition: transform 3s ease, opacity 2s ease;
-  z-index: 4;
-}
-
-/* Birthday Message */
-.birthday-message {
-  font-family: 'Bigelow Rules', cursive;
-  color: #f4b400;
-  font-size: 2em;
-  text-align: center;
-  width: 80%;
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 2s ease;
-}
-
-.highlight {
-  font-size: 2.5em;
-  text-shadow: 0 0 10px #f4b400, 0 0 20px #f4b400;
+  setTimeout(() => {
+    birthdayMessage.style.display = 'block';
+    birthdayMessage.style.opacity = 1;
+  }, 5500);
 }
