@@ -1,0 +1,32 @@
+const storyText = document.getElementById('story-text');
+const nextBtn = document.getElementById('next-btn');
+
+const storyLines = [
+  "Once upon a time...",
+  "In a hidden corner of the wizarding world...",
+  "There lived a brave soul destined for greatness...",
+  "On a fateful day, April 28th...",
+  "The skies were alive with the flight of dragons...",
+  "Whispers traveled across the halls of Hogwarts...",
+  "A celebration was brewing for a young witch named Shamma."
+];
+
+let currentLine = 0;
+
+function showNextLine() {
+  if (currentLine < storyLines.length) {
+    storyText.style.opacity = 0;
+    setTimeout(() => {
+      storyText.textContent = storyLines[currentLine];
+      storyText.style.opacity = 1;
+      currentLine++;
+      setTimeout(showNextLine, 3000); // Change line every 3 seconds
+    }, 1000);
+  } else {
+    // All story lines finished
+    nextBtn.style.display = 'inline-block'; // Show Continue button
+  }
+}
+
+// Start the story
+showNextLine();
