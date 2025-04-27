@@ -12,13 +12,13 @@
 
 <body>
 
-  <!-- Sparkles -->
+  <!-- Sparkles background -->
   <canvas id="sparkle-canvas"></canvas>
 
   <!-- Background music -->
   <audio id="bg-music" src="hbd.mp3" loop></audio>
 
-  <!-- Dragons -->
+  <!-- Dragons floating -->
   <img src="dragon2.png" alt="Left Dragon" class="dragon dragon-left">
   <img src="dragon1.png" alt="Right Dragon" class="dragon dragon-right">
 
@@ -27,18 +27,31 @@
     <button id="start-btn" class="start-btn">✨ Start the Magic ✨</button>
   </div>
 
-  <!-- Story Text (hidden initially) -->
-  <div class="story-container" style="display: none;">
+  <!-- 🎯 STORY CONTAINER here (hidden at first) -->
+  <div class="story-container" style="display: none; flex-direction: column; align-items: center;">
+    
+    <!-- Story line text -->
     <div id="story-text" class="story-text"></div>
+    
+    <!-- Big glowing Shamma text (hidden at first) -->
+    <div id="shamma-name" class="shamma-name" style="display: none;">Shamma</div>
+
+    <!-- Shamma image (hidden at first) -->
+    <img id="shamma-img" src="shamma.png" alt="Shamma" class="shamma-img" style="display: none;">
+    
+    <!-- Calendar image (hidden at first) -->
     <img id="calendar" src="calendar.png" alt="Birthday Calendar" class="calendar-img" style="display: none;">
+    
+    <!-- Continue button (hidden at first) -->
     <button id="next-btn" class="next-btn" style="display: none;">Continue ➔</button>
+
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts at the end -->
   <script src="sparkles.js"></script>
   <script src="script.js"></script>
 
-  <!-- Start the Magic Script -->
+  <!-- Start button behavior -->
   <script>
     window.addEventListener('load', () => {
       const startBtn = document.getElementById('start-btn');
