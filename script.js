@@ -1,5 +1,6 @@
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
+const calendar = document.getElementById('calendar');
 
 const storyLines = [
   "Once upon a time...",
@@ -19,11 +20,16 @@ function showNextLine() {
     setTimeout(() => {
       storyText.textContent = storyLines[currentLine];
       storyText.style.opacity = 1;
+
+      // Show calendar when we reach April 28th
+      if (storyLines[currentLine].includes("April 28th")) {
+        calendar.style.display = 'block';
+      }
+
       currentLine++;
-      setTimeout(showNextLine, 3000); // Change line every 3 seconds
+      setTimeout(showNextLine, 3500); // Change every 3.5 seconds
     }, 1000);
   } else {
-    // All story lines finished
     nextBtn.style.display = 'inline-block'; // Show Continue button
   }
 }
