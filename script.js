@@ -19,29 +19,34 @@ let currentLine = 0;
 function showNextLine() {
   if (currentLine < storyLines.length) {
     storyText.style.opacity = 0;
+
     setTimeout(() => {
       storyText.textContent = storyLines[currentLine];
       storyText.style.opacity = 1;
 
-      // Special actions at certain lines
+      // 📅 Special action: show calendar at April 28
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
+        shammaImg.style.display = 'none';  // Make sure shamma.png is hidden still
+        shammaName.style.display = 'none';
       }
 
+      // 📜 Special action: REMOVE calendar and SHOW shamma.png at Whispers
       if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
-        // Remove calendar and show shamma.png instead
-        calendar.style.display = 'none';
-        shammaImg.style.display = 'block';
+        calendar.style.display = 'none'; // ❌ Hide calendar immediately
+        shammaImg.style.display = 'block'; // ✅ Show shamma.png
+        shammaName.style.display = 'none'; // Big Shamma text still hidden
       }
 
+      // ✨ Special action: SHOW big glowing Shamma text
       if (storyLines[currentLine].includes("A celebration was brewing")) {
-        // Show big Shamma glowing text
-        shammaName.style.display = 'block';
+        shammaName.style.display = 'block'; // ✅ Show big "Shamma" text glowing
       }
 
       currentLine++;
       setTimeout(showNextLine, 3500);
     }, 1000);
+
   } else {
     nextBtn.style.display = 'inline-block';
   }
