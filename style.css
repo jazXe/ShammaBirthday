@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 100vh;
   background-color: #3b2742; /* Dark purple */
-  background-image: url('pic1.png'); /* Make sure to upload your image or use a hosted link */
+  background-image: url('Gryffindor-Logo.png'); /* Make sure to upload your image or use a hosted link */
   background-size: cover;
   background-position: center;
   display: flex;
