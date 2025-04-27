@@ -1,8 +1,15 @@
+// --- Scene 1 variables ---
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
 const calendar = document.getElementById('calendar');
 const shammaImg = document.getElementById('shamma-img');
 const shammaName = document.getElementById('shamma-name');
+
+// --- Scene 2 variables ---
+const owl = document.getElementById('owl');
+const letter = document.getElementById('letter');
+const birthdayText = document.getElementById('birthday-text');
+const gryffindorLogo = document.getElementById('gryffindor-logo');
 
 const storyLines = [
   "Once upon a time...",
@@ -16,11 +23,12 @@ const storyLines = [
 
 let currentLine = 0;
 
+// --- Function to show story lines ---
 function showNextLine() {
   if (currentLine < storyLines.length) {
     // Fade out current text first
     storyText.style.opacity = 0;
-    shammaName.style.opacity = 0; // Hide big Shamma if visible
+    shammaName.style.opacity = 0; // Hide Shamma text at fade out
 
     setTimeout(() => {
       // Special actions depending on the text
@@ -28,69 +36,69 @@ function showNextLine() {
       // 📅 Show calendar at April 28
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
-        shammaImg.style.display = 'none'; 
+        shammaImg.style.display = 'none';
         shammaName.style.display = 'none';
       }
 
-      // 📜 Switch to Shamma image
+      // 📜 Switch to Shamma image at Whispers
       if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
         calendar.style.display = 'none';
         shammaImg.style.display = 'block';
         shammaName.style.display = 'none';
       }
 
-      // ✨ Big Shamma glowing name appears
+      // ✨ At celebration, show small story text + big glowing Shamma
       if (storyLines[currentLine].includes("A celebration was brewing")) {
-        storyText.textContent = ""; // Clear normal small text
-        shammaName.style.display = 'block';
+        storyText.textContent = storyLines[currentLine]; // ✅ Keep showing "A celebration..."
+        storyText.style.opacity = 1; // ✅ Fade in normal small text
+        shammaName.style.display = 'block'; // ✅ Also show big glowing "Shamma"
         setTimeout(() => {
-          shammaName.style.opacity = 1; // Fade in big Shamma smoothly
-        }, 100);
+          shammaName.style.opacity = 1; // Fade in Shamma smoothly
+        }, 200);
       } else {
         // Normal story text
         storyText.textContent = storyLines[currentLine];
-        storyText.style.opacity = 1; // Fade in normal text
+        storyText.style.opacity = 1;
+        shammaName.style.display = 'none'; // Hide big Shamma if not at final
       }
 
       currentLine++;
       setTimeout(showNextLine, 3500);
 
-    }, 1000); // wait 1s during fade out
+    }, 1000); // Wait 1s for fade out
   } else {
     nextBtn.style.display = 'inline-block';
   }
 }
 
-
-// 🎯 When Continue button clicked
+// --- Scene 2 ---
+// When Continue button clicked
 nextBtn.addEventListener('click', startScene2);
 
 function startScene2() {
-  // Fade out Scene 1
+  // Fade out Scene 1 elements
   document.querySelector('.story-container').style.display = 'none';
   document.querySelector('.start-container').style.display = 'none';
   document.getElementById('sparkle-canvas').style.display = 'none';
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
 
-  // Show Scene 2
+  // Show Scene 2 container
   document.getElementById('scene2').style.display = 'block';
 
-  // Start Owl animation
-  const owl = document.getElementById('owl');
+  // Start Owl growing animation
   setTimeout(() => {
     owl.style.transform = 'translate(-50%, -50%) scale(2)';
-  }, 200); // Start growing after short time
+  }, 200); // Start zoom after short time
 
-  // After Owl grows, fade Owl away
+  // Fade out Owl after growing
   setTimeout(() => {
     owl.style.opacity = 0;
-  }, 3500); // Fade after 3.5 seconds
+  }, 3500); // After 3.5s
 
-  // After Owl faded, show Letter + Birthday Text + Gryffindor Stamp
+  // After Owl faded, show Letter + Birthday Text + Gryffindor Logo
   setTimeout(() => {
-    document.getElementById('letter').style.display = 'block';
-    document.getElementById('gryffindor-logo').style.display = 'block';
-    document.getElementById('birthday-text').style.display = 'block';
-  }, 5500); // After Owl gone
+    letter.style.display = 'block';
+    birthdayText.style.display = 'block';
+    gryffindorLogo.style.display = 'block';
+  }, 5500); // After owl disappears
 }
-
