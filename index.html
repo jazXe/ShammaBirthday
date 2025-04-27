@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Once Upon a Time...</title>
 
-  <!-- Font -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Sparkles background -->
+  <!-- Sparkles -->
   <canvas id="sparkle-canvas"></canvas>
 
   <!-- Background music -->
@@ -29,7 +27,7 @@
     <button id="start-btn" class="start-btn">✨ Start the Magic ✨</button>
   </div>
 
-  <!-- Story text (hidden initially) -->
+  <!-- Story Text (hidden initially) -->
   <div class="story-container" style="display: none;">
     <div id="story-text" class="story-text"></div>
     <img id="calendar" src="calendar.png" alt="Birthday Calendar" class="calendar-img" style="display: none;">
@@ -40,9 +38,9 @@
   <script src="sparkles.js"></script>
   <script src="script.js"></script>
 
+  <!-- Start the Magic Script -->
   <script>
     window.addEventListener('load', () => {
-      // Attach click after page fully loaded
       const startBtn = document.getElementById('start-btn');
       const storyContainer = document.querySelector('.story-container');
       const bgMusic = document.getElementById('bg-music');
