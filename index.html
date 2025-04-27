@@ -22,13 +22,13 @@
   <img src="dragon2.png" alt="Left Dragon" class="dragon dragon-left">
   <img src="dragon1.png" alt="Right Dragon" class="dragon dragon-right">
 
-  <!-- Start Magic Button -->
+  <!-- Start Button -->
   <div class="start-container">
     <button id="start-btn" class="start-btn">✨ Start the Magic ✨</button>
   </div>
 
-  <!-- Story container -->
-  <div class="story-container" style="display:none;">
+  <!-- Story container (hidden at first) -->
+  <div class="story-container" style="display: none;">
     <div id="story-text" class="story-text"></div>
     <img id="calendar" src="calendar.png" alt="Birthday Calendar" class="calendar-img" style="display: none;">
     <button id="next-btn" class="next-btn" style="display: none;">Continue ➔</button>
@@ -38,7 +38,7 @@
   <script src="sparkles.js"></script>
   <script src="script.js"></script>
 
-  <!-- Start the magic script -->
+  <!-- Start the Magic Script -->
   <script>
     const startBtn = document.getElementById('start-btn');
     const storyContainer = document.querySelector('.story-container');
@@ -47,9 +47,9 @@
 
     startBtn.addEventListener('click', function() {
       bgMusic.play();
-      startContainer.style.display = 'none'; // hide start button
-      storyContainer.style.display = 'flex'; // show story text
-      showNextLine(); // Start the story text fading
+      startContainer.style.display = 'none';
+      storyContainer.style.display = 'flex';
+      showNextLine();
     });
   </script>
 
