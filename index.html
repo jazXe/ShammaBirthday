@@ -15,26 +15,19 @@
 <body>
 
   <!-- Background music -->
-  <audio id="bg-music" src="https://cdn.pixabay.com/audio/2021/08/08/audio_b4db5c4428.mp3" autoplay loop></audio>
+  <audio id="bg-music" src="hbd.mp3" autoplay loop></audio>
 
-  <!-- Sparkles -->
+  <!-- Start the Magic button (optional if autoplay blocked) -->
+  <button id="play-music" onclick="document.getElementById('bg-music').play(); this.style.display='none';" class="music-btn">
+    Start the Magic ✨🎵
+  </button>
+
+  <!-- Sparkles background -->
   <canvas id="sparkle-canvas"></canvas>
 
+  <!-- Dragons -->
+  <img src="dragon2.png" alt="Left Dragon" class="dragon dragon-left">
+  <img src="dragon1.png" alt="Right Dragon" class="dragon dragon-right">
+
   <!-- Story container -->
-  <div class="story-container">
-    <div id="story-text" class="story-text">Loading story...</div>
-    <img id="calendar" src="calendar.png" alt="Birthday Calendar" class="calendar-img" style="display: none;">
-    <button id="next-btn" class="next-btn" style="display: none;">Continue ➔</button>
-  </div>
-
-  <!-- JS -->
-  <script src="script.js"></script>
-  <script src="sparkles.js"></script>
-
-</body>
-</html>
-
-
-<!-- Dragons -->
-<img src="dragon.png" alt="Left Dragon" class="dragon dragon-left">
-<img src="dragon.png" alt="Right Dragon" class="dragon dragon-right">
+  <div
