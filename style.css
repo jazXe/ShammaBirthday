@@ -117,7 +117,7 @@ body {
   z-index: 5;
 }
 
-/* Letter Container */
+/* Letter and Birthday Text */
 .letter-container {
   position: relative;
   display: flex;
@@ -127,13 +127,11 @@ body {
   margin-top: 50px;
 }
 
-/* Letter */
 .letter {
-  width: 650px; /* Make parchment larger */
+  width: 650px;
   z-index: 2;
 }
 
-/* Birthday Text */
 .birthday-text {
   position: absolute;
   top: 25%;
@@ -142,10 +140,6 @@ body {
   color: #f4b400;
   font-family: 'Bigelow Rules', cursive;
   font-size: 2em;
-  z-index: 6; /* 🆙 Higher than letter */
+  z-index: 6;
   line-height: 1.5;
-  opacity: 0;
-  transition: opacity 1.5s ease;
 }
-
-/* (REMOVE gryffindor-logo class, not needed anymore) */
