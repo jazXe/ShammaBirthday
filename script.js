@@ -1,6 +1,6 @@
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
-const calendar = document.getElementById('calendar');
+const calendarContainer = document.getElementById('calendar-container');
 
 const storyLines = [
   "Once upon a time...",
@@ -22,15 +22,13 @@ function showNextLine() {
       storyText.style.opacity = 1;
 
       if (storyLines[currentLine].includes("April 28th")) {
-        calendar.style.display = 'block';
+        calendarContainer.style.display = 'flex';
       }
 
       currentLine++;
       setTimeout(showNextLine, 3500);
     }, 1000);
   } else {
-    nextBtn.style.display = 'inline-block'; // Show Continue button
+    nextBtn.style.display = 'inline-block';
   }
 }
-
-showNextLine();
