@@ -55,11 +55,11 @@ function showNextLine() {
 }
 
 function startScene2() {
+  // Only hide story and dragons (keep sparkles)
   document.querySelector('.story-container').style.display = 'none';
-  document.getElementById('sparkle-canvas').style.display = 'none';
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
 
-  scene2.style.display = 'block';
+  scene2.style.display = 'flex'; // changed to flex for center
 
   setTimeout(() => {
     owl.style.transform = 'translate(-50%, -50%) scale(2)';
