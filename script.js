@@ -21,18 +21,18 @@ function showNextLine() {
       storyText.textContent = storyLines[currentLine];
       storyText.style.opacity = 1;
 
-      // Show calendar when we reach April 28th
+      // Show calendar when it's April 28th
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
       }
 
       currentLine++;
-      setTimeout(showNextLine, 3500); // Change every 3.5 seconds
+      setTimeout(showNextLine, 3500); // every 3.5 seconds
     }, 1000);
   } else {
     nextBtn.style.display = 'inline-block'; // Show Continue button
   }
 }
 
-// Start the story
+// Start story
 showNextLine();
