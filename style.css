@@ -97,6 +97,24 @@ body {
   100% { transform: translateY(0px); }
 }
 
+/* Big glowing Shamma name */
+.shamma-name {
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 4em;
+  color: #f9dfad;
+  text-shadow: 0 0 10px #f9dfad, 0 0 20px #f9dfad;
+  margin-top: 20px;
+  display: none;
+}
+
+/* Shamma image style */
+.shamma-img {
+  width: 250px;
+  margin-top: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+
 /* Continue button */
 .next-btn {
   margin-top: 40px;
