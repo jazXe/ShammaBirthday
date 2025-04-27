@@ -105,19 +105,19 @@ body {
   color: #3b2742;
 }
 
-/* Owl */
+/* Scene 2 Owl */
 .owl {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100px;
+  width: 80px;
   transform: translate(-50%, -50%) scale(0.5);
   opacity: 1;
   transition: transform 3s ease, opacity 2s ease;
   z-index: 5;
 }
 
-/* Letter and Birthday Text */
+/* Letter and text */
 .letter-container {
   position: relative;
   display: flex;
@@ -128,18 +128,26 @@ body {
 }
 
 .letter {
-  width: 650px;
+  width: 500px;
   z-index: 2;
+}
+
+.gryffindor-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  z-index: 3;
 }
 
 .birthday-text {
   position: absolute;
-  top: 25%;
-  width: 80%;
+  top: 30%;
+  width: 70%;
   text-align: center;
   color: #f4b400;
   font-family: 'Bigelow Rules', cursive;
-  font-size: 2em;
-  z-index: 6;
+  font-size: 1.8em;
+  z-index: 4;
   line-height: 1.5;
 }
