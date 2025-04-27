@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Once Upon a Time...</title>
 
-  <!-- Font -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,7 +27,31 @@
     <button id="start-btn" class="start-btn">✨ Start the Magic ✨</button>
   </div>
 
-  <!-- Story container (COMPLETELY HIDDEN FIRST) -->
+  <!-- Story Container -->
   <div class="story-container" style="display: none;">
     <div id="story-text" class="story-text"></div>
-    <img id="calendar"
+    <img id="calendar" src="calendar.png" alt="Birthday Calendar" class="calendar-img" style="display: none;">
+    <button id="next-btn" class="next-btn" style="display: none;">Continue ➔</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="sparkles.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Start Button Behavior -->
+  <script>
+    const startBtn = document.getElementById('start-btn');
+    const storyContainer = document.querySelector('.story-container');
+    const bgMusic = document.getElementById('bg-music');
+    const startContainer = document.querySelector('.start-container');
+
+    startBtn.addEventListener('click', function() {
+      bgMusic.play();
+      startContainer.style.display = 'none';
+      storyContainer.style.display = 'flex';
+      showNextLine();
+    });
+  </script>
+
+</body>
+</html>
