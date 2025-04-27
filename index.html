@@ -17,11 +17,6 @@
   <!-- Background music -->
   <audio id="bg-music" src="hbd.mp3" autoplay loop></audio>
 
-  <!-- Start the Magic button (optional if autoplay blocked) -->
-  <button id="play-music" onclick="document.getElementById('bg-music').play(); this.style.display='none';" class="music-btn">
-    Start the Magic ✨🎵
-  </button>
-
   <!-- Sparkles background -->
   <canvas id="sparkle-canvas"></canvas>
 
@@ -30,4 +25,7 @@
   <img src="dragon1.png" alt="Right Dragon" class="dragon dragon-right">
 
   <!-- Story container -->
-  <div
+  <div class="story-container">
+    <div id="story-text" class="story-text"></div>
+    <img id="calendar" src="calendar.png" alt="Birthday Calendar" class="calendar-img" style="display: none;">
+    <button id="next
