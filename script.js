@@ -1,8 +1,10 @@
 const storyText = document.getElementById('story-text');
-const nextBtn = document.getElementById('next-btn');
 const calendar = document.getElementById('calendar');
 const shammaImg = document.getElementById('shamma-img');
 const shammaName = document.getElementById('shamma-name');
+const scene2 = document.getElementById('scene2');
+const owl = document.getElementById('owl');
+const birthdayMessage = document.getElementById('birthday-message');
 
 const storyLines = [
   "Once upon a time...",
@@ -48,6 +50,27 @@ function showNextLine() {
       setTimeout(showNextLine, 3500);
     }, 1000);
   } else {
-    nextBtn.style.display = 'inline-block';
+    setTimeout(startScene2, 2000);
   }
+}
+
+function startScene2() {
+  document.querySelector('.story-container').style.display = 'none';
+  document.getElementById('sparkle-canvas').style.display = 'none';
+  document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
+
+  scene2.style.display = 'block';
+
+  setTimeout(() => {
+    owl.style.transform = 'translate(-50%, -50%) scale(2)';
+  }, 200);
+
+  setTimeout(() => {
+    owl.style.opacity = 0;
+  }, 3500);
+
+  setTimeout(() => {
+    birthdayMessage.style.display = 'block';
+    birthdayMessage.style.opacity = 1;
+  }, 5500);
 }
