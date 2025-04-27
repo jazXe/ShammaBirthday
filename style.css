@@ -1,33 +1,48 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #3a3a3a;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #3b2742; /* Dark purple */
+  background-image: url('pic1.png'); /* Make sure to upload your image or use a hosted link */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'MedievalSharp', cursive;
+  color: #f4b400; /* Warm yellow */
+  text-align: center;
 }
 
-.hero {
-    background-color: #9E1B32; /* Gryffindor red */
-    color: #FFD700; /* Gryffindor gold */
-    text-align: center;
-    padding: 50px 0;
+h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 5px #000;
+  animation: glow 2s infinite alternate;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin: 0;
+p {
+  font-size: 1.5em;
+  margin-top: 10px;
 }
 
-.hero p {
-    font-size: 1.5em;
+@keyframes glow {
+  from { text-shadow: 0 0 10px #f4b400, 0 0 20px #f4b400; }
+  to { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
 }
 
-footer {
-    background-color: #3a3a3a;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.gryffindor-crest {
+  width: 150px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid #f4b400;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+}
+
+.spell {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #ffffff;
 }
