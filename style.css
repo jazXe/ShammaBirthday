@@ -19,7 +19,31 @@ body {
   z-index: 0;
 }
 
-/* Story container */
+/* Dragons */
+.dragon {
+  position: absolute;
+  width: 120px;
+  top: 20%;
+  z-index: 1;
+  animation: floatDragon 4s ease-in-out infinite;
+}
+
+.dragon-left {
+  left: 5%;
+}
+
+.dragon-right {
+  right: 5%;
+}
+
+/* Floating dragons animation */
+@keyframes floatDragon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Story text container */
 .story-container {
   position: relative;
   z-index: 2;
@@ -46,38 +70,14 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Floating calendar animation */
+/* Floating animation */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Dragons */
-.dragon {
-  position: absolute;
-  width: 120px;
-  top: 20%;
-  z-index: 1;
-  animation: floatDragon 4s ease-in-out infinite;
-}
-
-.dragon-left {
-  left: 5%;
-}
-
-.dragon-right {
-  right: 5%;
-}
-
-/* Floating dragons animation */
-@keyframes floatDragon {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* Continue button */
+/* Next button */
 .next-btn {
   margin-top: 40px;
   padding: 10px 30px;
@@ -91,7 +91,7 @@ body {
   animation: glow 1s infinite alternate;
 }
 
-/* Button glow */
+/* Glow button animation */
 @keyframes glow {
   from { box-shadow: 0 0 5px #f4b400; }
   to { box-shadow: 0 0 20px #f4b400; }
