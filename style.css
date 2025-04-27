@@ -1,4 +1,3 @@
-/* Body */
 body {
   margin: 0;
   padding: 0;
@@ -10,26 +9,25 @@ body {
   color: #F9DFAD;
 }
 
-/* Sparkle canvas - put it at z-index 0 */
+/* Sparkles canvas behind everything */
 #sparkle-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Always BEHIND */
+  z-index: 0;
 }
 
-/* Dragons - floating above sparkles */
+/* Dragons */
 .dragon {
   position: absolute;
   width: 120px;
   top: 20%;
-  z-index: 2; /* Above sparkles */
+  z-index: 1;
   animation: floatDragon 4s ease-in-out infinite;
 }
 
-/* Left and Right Dragons */
 .dragon-left {
   left: 5%;
 }
@@ -38,16 +36,21 @@ body {
   right: 5%;
 }
 
-/* Start button - big and clickable */
+@keyframes floatDragon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Start Button */
 .start-container {
   position: absolute;
   top: 40%;
   width: 100%;
   text-align: center;
-  z-index: 3; /* Above dragons and sparkles */
+  z-index: 5;
 }
 
-/* Start button style */
 .start-btn {
   font-family: 'Bigelow Rules', cursive;
   font-size: 2em;
@@ -60,7 +63,7 @@ body {
   animation: glow 1s infinite alternate;
 }
 
-/* Story text and calendar */
+/* Story container */
 .story-container {
   position: relative;
   z-index: 2;
@@ -72,4 +75,43 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
+}
+
+/* Story text */
+.story-text {
+  font-size: 2.5em;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+/* Calendar image */
+.calendar-img {
+  width: 300px;
+  margin-top: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Continue Button */
+.next-btn {
+  margin-top: 40px;
+  padding: 10px 30px;
+  font-size: 1.5em;
+  font-family: 'Bigelow Rules', cursive;
+  background-color: #f4b400;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #3b2742;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px #f4b400; }
+  to { box-shadow: 0 0 20px #f4b400; }
 }
