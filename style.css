@@ -1,12 +1,28 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #3b2742; /* Dark purple background */
+  background-color: #3b2742; /* Dark magical purple */
   font-family: 'Bigelow Rules', cursive;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  color: #fefae0; /* Soft white/cream text color */
+  color: #fefae0; /* Soft cream text */
+}
+
+/* Music Button */
+.music-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #f4b400;
+  border: none;
+  border-radius: 10px;
+  color: #3b2742;
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 1em;
+  cursor: pointer;
+  z-index: 999;
 }
 
 /* Sparkle canvas */
@@ -19,7 +35,7 @@ body {
   z-index: 0;
 }
 
-/* Story text container */
+/* Story container */
 .story-container {
   position: relative;
   z-index: 1;
@@ -46,40 +62,38 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Dragon images */
-.dragon {
-  position: absolute;
-  width: 150px; /* Smaller size */
-  top: 30px;
-  z-index: 2;
-  animation: floatDragon 4s ease-in-out infinite;
-}
-
-.dragon-left {
-  left: 30px;
-}
-
-.dragon-right {
-  right: 30px;
-  transform: scaleX(-1); /* Flip the right dragon horizontally */
-}
-
-/* Floating animation for dragons */
-@keyframes floatDragon {
-  0% { transform: translateY(0px) scaleX(1); }
-  50% { transform: translateY(-10px) scaleX(1); }
-  100% { transform: translateY(0px) scaleX(1); }
-}
-
-
-/* Floating animation */
+/* Floating calendar animation */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Next button */
+/* Dragons */
+.dragon {
+  position: absolute;
+  width: 120px;
+  top: 20%;
+  z-index: 2;
+  animation: floatDragon 4s ease-in-out infinite;
+}
+
+.dragon-left {
+  left: 5%;
+}
+
+.dragon-right {
+  right: 5%;
+}
+
+/* Floating dragons animation */
+@keyframes floatDragon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Continue button */
 .next-btn {
   margin-top: 40px;
   padding: 10px 30px;
@@ -93,6 +107,7 @@ body {
   animation: glow 1s infinite alternate;
 }
 
+/* Glowing button */
 @keyframes glow {
   from { box-shadow: 0 0 5px #f4b400; }
   to { box-shadow: 0 0 20px #f4b400; }
