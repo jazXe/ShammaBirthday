@@ -18,35 +18,44 @@ let currentLine = 0;
 
 function showNextLine() {
   if (currentLine < storyLines.length) {
+    // Fade out current text first
     storyText.style.opacity = 0;
+    shammaName.style.opacity = 0; // Hide big Shamma if visible
 
     setTimeout(() => {
-      storyText.textContent = storyLines[currentLine];
-      storyText.style.opacity = 1;
+      // Special actions depending on the text
 
-      // 📅 Special action: show calendar at April 28
+      // 📅 Show calendar at April 28
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
-        shammaImg.style.display = 'none';  // Make sure shamma.png is hidden still
+        shammaImg.style.display = 'none'; 
         shammaName.style.display = 'none';
       }
 
-      // 📜 Special action: REMOVE calendar and SHOW shamma.png at Whispers
+      // 📜 Switch to Shamma image
       if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
-        calendar.style.display = 'none'; // ❌ Hide calendar immediately
-        shammaImg.style.display = 'block'; // ✅ Show shamma.png
-        shammaName.style.display = 'none'; // Big Shamma text still hidden
+        calendar.style.display = 'none';
+        shammaImg.style.display = 'block';
+        shammaName.style.display = 'none';
       }
 
-      // ✨ Special action: SHOW big glowing Shamma text
+      // ✨ Big Shamma glowing name appears
       if (storyLines[currentLine].includes("A celebration was brewing")) {
-        shammaName.style.display = 'block'; // ✅ Show big "Shamma" text glowing
+        storyText.textContent = ""; // Clear normal small text
+        shammaName.style.display = 'block';
+        setTimeout(() => {
+          shammaName.style.opacity = 1; // Fade in big Shamma smoothly
+        }, 100);
+      } else {
+        // Normal story text
+        storyText.textContent = storyLines[currentLine];
+        storyText.style.opacity = 1; // Fade in normal text
       }
 
       currentLine++;
       setTimeout(showNextLine, 3500);
-    }, 1000);
 
+    }, 1000); // wait 1s during fade out
   } else {
     nextBtn.style.display = 'inline-block';
   }
