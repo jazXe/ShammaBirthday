@@ -1,138 +1,108 @@
 body {
-margin: 0;
-padding: 0;
-background-color: #3b2742; /* ORIGINAL dark purple */
-font-family: 'Bigelow Rules', cursive;
-height: 100vh;
-overflow: hidden;
-position: relative;
-color: #fefae0; /* ORIGINAL text color */
+  margin: 0;
+  padding: 0;
+  background-color: #3b2742;
+  font-family: 'Bigelow Rules', cursive;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  color: #fefae0;
 }
 
 /* Sparkles */
 #sparkle-canvas {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 /* Dragons */
 .dragon {
-position: absolute;
-width: 120px;
-top: 20%;
-z-index: 1;
-animation: floatDragon 4s ease-in-out infinite;
+  position: absolute;
+  width: 120px;
+  top: 20%;
+  z-index: 1;
+  animation: floatDragon 4s ease-in-out infinite;
 }
-
-.dragon-left {
-left: 5%;
-}
-
-.dragon-right {
-right: 5%;
-}
+.dragon-left { left: 5%; }
+.dragon-right { right: 5%; }
 
 @keyframes floatDragon {
-0% { transform: translateY(0px); }
-50% { transform: translateY(-10px); }
-100% { transform: translateY(0px); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Start button */
+/* Start Button */
 .start-container {
-position: absolute;
-top: 40%;
-width: 100%;
-text-align: center;
-z-index: 5;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
 }
 
 .start-btn {
-font-family: 'Bigelow Rules', cursive;
-font-size: 2em;
-padding: 15px 40px;
-background-color: #f4b400;
-border: none;
-border-radius: 15px;
-color: #3b2742;
-cursor: pointer;
-animation: glow 1s infinite alternate;
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 2em;
+  padding: 15px 40px;
+  background-color: #f4b400;
+  border: none;
+  border-radius: 15px;
+  color: #3b2742;
+  cursor: pointer;
+  animation: glow 1s infinite alternate;
 }
 
-/* Story text container */
-.story-container {
-position: relative;
-z-index: 2;
-height: 100vh;
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 20px;
+@keyframes glow {
+  from { box-shadow: 0 0 5px #f4b400; }
+  to { box-shadow: 0 0 20px #f4b400; }
 }
 
 /* Story text */
 .story-text {
-font-size: 2.5em;
-opacity: 0;
-transition: opacity 1.5s ease;
+  font-size: 2.5em;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
-/* Calendar image */
-.calendar-img {
-width: 300px;
-margin-top: 10px;
-animation: float 3s ease-in-out infinite;
+/* Shamma name */
+.shamma-name {
+  font-size: 4em;
+  color: #f9dfad;
+  text-shadow: 0 0 10px #f9dfad, 0 0 20px #f9dfad;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+/* Images */
+.calendar-img, .shamma-img {
+  width: 300px;
+  margin-top: 20px;
+  animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
-0% { transform: translateY(0px); }
-50% { transform: translateY(-10px); }
-100% { transform: translateY(0px); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Big glowing Shamma name */
-.shamma-name {
-font-family: 'Bigelow Rules', cursive;
-font-size: 4em;
-color: #f9dfad;
-text-shadow: 0 0 10px #f9dfad, 0 0 20px #f9dfad;
-margin-top: 20px;
-opacity: 0; /* Start hidden */
-transition: opacity 1.5s ease; /* Smooth glowing Shamma text fade */
-}
-
-/* Shamma image style */
-.shamma-img {
-width: 250px;
-margin-top: 20px;
-animation: float 3s ease-in-out infinite;
-}
-
-
-/* Continue button */
+/* Next button */
 .next-btn {
-margin-top: 40px;
-padding: 10px 30px;
-font-size: 1.5em;
-font-family: 'Bigelow Rules', cursive;
-background-color: #f4b400;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-color: #3b2742;
-animation: glow 1s infinite alternate;
-}
-
-@keyframes glow {
-from { box-shadow: 0 0 5px #f4b400; }
-to { box-shadow: 0 0 20px #f4b400; }
+  margin-top: 40px;
+  padding: 10px 30px;
+  font-size: 1.5em;
+  font-family: 'Bigelow Rules', cursive;
+  background-color: #f4b400;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #3b2742;
 }
 
 /* Scene 2 Owl */
@@ -147,7 +117,7 @@ to { box-shadow: 0 0 20px #f4b400; }
   z-index: 5;
 }
 
-/* Letter Container */
+/* Letter and text */
 .letter-container {
   position: relative;
   display: flex;
@@ -157,13 +127,11 @@ to { box-shadow: 0 0 20px #f4b400; }
   margin-top: 50px;
 }
 
-/* Letter */
 .letter {
   width: 500px;
   z-index: 2;
 }
 
-/* Gryffindor Logo */
 .gryffindor-logo {
   position: absolute;
   bottom: 20px;
@@ -172,7 +140,6 @@ to { box-shadow: 0 0 20px #f4b400; }
   z-index: 3;
 }
 
-/* Birthday Text */
 .birthday-text {
   position: absolute;
   top: 30%;
@@ -183,13 +150,4 @@ to { box-shadow: 0 0 20px #f4b400; }
   font-size: 1.8em;
   z-index: 4;
   line-height: 1.5;
-  opacity: 0; /* Start hidden */
-  transition: opacity 1.5s ease;
-}
-
-/* Highlight */
-.highlight {
-  font-size: 2.2em;
-  font-weight: bold;
-  color: #f4b400;
 }
