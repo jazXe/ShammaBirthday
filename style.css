@@ -2,35 +2,45 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #3b2742; /* Dark purple */
-  background-image: url('Gryffindor-Logo.png'); /* Make sure to upload your image or use a hosted link */
+  background-color: #3b2742; /* Dark purple background */
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'MedievalSharp', cursive;
-  color: #f4b400; /* Warm yellow */
+  font-family: 'Bigelow Rules', cursive;
+  color: #f4b400; /* Warm golden color */
   text-align: center;
+  overflow: hidden;
 }
 
+/* Glowing animation for title */
 h1 {
   font-size: 3em;
   text-shadow: 2px 2px 5px #000;
   animation: glow 2s infinite alternate;
 }
 
+/* Subtext */
 p {
   font-size: 1.5em;
   margin-top: 10px;
 }
 
+/* Glowing effect */
 @keyframes glow {
   from { text-shadow: 0 0 10px #f4b400, 0 0 20px #f4b400; }
   to { text-shadow: 0 0 20px #fff, 0 0 30px #fff; }
 }
 
+/* Castle image styling */
+.castle {
+  width: 400px;
+  margin-top: 20px;
+}
+
+/* Gryffindor crest styling */
 .gryffindor-crest {
   width: 150px;
   margin-top: 20px;
@@ -40,6 +50,7 @@ p {
   padding: 10px;
 }
 
+/* Spell text */
 .spell {
   margin-top: 20px;
   font-size: 1.2em;
