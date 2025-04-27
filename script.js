@@ -62,7 +62,7 @@ function startScene2() {
   scene2.style.display = 'block';
 
   setTimeout(() => {
-    owl.style.transform = 'translate(-50%, -50%) scale(2)';
+    owl.style.transform = 'translate(-50%, -50%) scale(10)';
   }, 200);
 
   setTimeout(() => {
