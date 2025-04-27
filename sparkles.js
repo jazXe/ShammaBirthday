@@ -27,7 +27,7 @@ createStars(100);
 
 function drawStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#fefae0'; 
+  ctx.fillStyle = '#4D3548'; 
   for (let star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
