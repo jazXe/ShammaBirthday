@@ -134,3 +134,62 @@ body {
   from { box-shadow: 0 0 5px #f4b400; }
   to { box-shadow: 0 0 20px #f4b400; }
 }
+
+
+/* Scene 2 Owl */
+.owl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 1;
+  transition: transform 3s ease, opacity 2s ease;
+  z-index: 5;
+}
+
+/* Letter Container */
+.letter-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+/* Letter image */
+.letter {
+  width: 400px;
+  z-index: 2;
+}
+
+/* Gryffindor Logo (Stamp) */
+.gryffindor-logo {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  z-index: 3;
+}
+
+/* Birthday Text */
+.birthday-text {
+  position: absolute;
+  top: 30%;
+  width: 70%;
+  text-align: center;
+  color: #f4b400;
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 1.8em;
+  z-index: 4;
+  line-height: 1.5;
+}
+
+/* Highlight part */
+.highlight {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #f4b400;
+}
+
