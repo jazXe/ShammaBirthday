@@ -1,15 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #4D3548;
+  background-color: #3b2742; /* ORIGINAL dark purple */
   font-family: 'Bigelow Rules', cursive;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  color: #F9DFAD;
+  color: #fefae0; /* ORIGINAL text color */
 }
 
-/* Sparkles canvas behind everything */
+/* Sparkles */
 #sparkle-canvas {
   position: absolute;
   top: 0;
@@ -42,7 +42,7 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* Start Button */
+/* Start button */
 .start-container {
   position: absolute;
   top: 40%;
@@ -63,7 +63,7 @@ body {
   animation: glow 1s infinite alternate;
 }
 
-/* Story container */
+/* Story text container */
 .story-container {
   position: relative;
   z-index: 2;
@@ -97,7 +97,7 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* Continue Button */
+/* Continue button */
 .next-btn {
   margin-top: 40px;
   padding: 10px 30px;
