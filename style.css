@@ -110,14 +110,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
+  width: 100px; /* 🆙 start slightly bigger */
   transform: translate(-50%, -50%) scale(0.5);
   opacity: 1;
   transition: transform 3s ease, opacity 2s ease;
-  z-index: 5;
+  z-index: 5; /* Higher than background */
 }
 
-/* Letter and text */
+/* Letter Container */
 .letter-container {
   position: relative;
   display: flex;
@@ -127,27 +127,33 @@ body {
   margin-top: 50px;
 }
 
+/* Letter parchment */
 .letter {
-  width: 500px;
-  z-index: 2;
+  width: 650px; /* 🆙 make parchment much bigger */
+  z-index: 2; /* Under birthday text */
 }
 
+/* Gryffindor Logo (stamp) */
 .gryffindor-logo {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
   width: 70px;
-  z-index: 3;
+  z-index: 3; /* Above parchment, but under text */
 }
 
+/* Birthday Text */
 .birthday-text {
   position: absolute;
-  top: 30%;
-  width: 70%;
+  top: 25%; /* 🆙 move text higher to center better */
+  width: 80%;
   text-align: center;
   color: #f4b400;
   font-family: 'Bigelow Rules', cursive;
-  font-size: 1.8em;
-  z-index: 4;
+  font-size: 2em;
+  z-index: 10; /* 🆙 HIGHEST to appear ON TOP */
   line-height: 1.5;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
+
