@@ -26,10 +26,8 @@ function createStars(count) {
 createStars(100);
 
 function drawStars() {
-  ctx.fillStyle = '#4D3548'; // Fill full background purple
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  ctx.fillStyle = '#EEEEEE'; // White sparkles
+  ctx.clearRect(0, 0, canvas.width, canvas.height); /* Clear canvas */
+  ctx.fillStyle = '#fefae0'; /* Soft white sparkles */
   for (let star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
