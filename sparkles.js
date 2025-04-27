@@ -26,7 +26,7 @@ function createStars(count) {
 createStars(100);
 
 function drawStars() {
-  ctx.fillStyle = '#4D3548'; // Fill background purple
+  ctx.fillStyle = '#4D3548'; // Fill full background purple
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.fillStyle = '#EEEEEE'; // White sparkles
