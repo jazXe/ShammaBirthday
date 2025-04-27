@@ -21,7 +21,6 @@ function showNextLine() {
       storyText.textContent = storyLines[currentLine];
       storyText.style.opacity = 1;
 
-      // Show calendar when reaching April 28
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
       }
