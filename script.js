@@ -1,15 +1,8 @@
-// --- Scene 1 Variables ---
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
 const calendar = document.getElementById('calendar');
 const shammaImg = document.getElementById('shamma-img');
 const shammaName = document.getElementById('shamma-name');
-
-// --- Scene 2 Variables ---
-const owl = document.getElementById('owl');
-const letter = document.getElementById('letter');
-const birthdayText = document.getElementById('birthday-text');
-const gryffindorLogo = document.getElementById('gryffindor-logo');
 
 const storyLines = [
   "Once upon a time...",
@@ -23,7 +16,6 @@ const storyLines = [
 
 let currentLine = 0;
 
-// Show storylines
 function showNextLine() {
   if (currentLine < storyLines.length) {
     storyText.style.opacity = 0;
@@ -46,12 +38,10 @@ function showNextLine() {
       }
 
       if (storyLines[currentLine].includes("A celebration was brewing")) {
+        shammaName.style.display = 'block';
         setTimeout(() => {
-          shammaName.style.display = 'block';
-          setTimeout(() => {
-            shammaName.style.opacity = 1;
-          }, 200);
-        }, 800);
+          shammaName.style.opacity = 1;
+        }, 200);
       }
 
       currentLine++;
@@ -59,62 +49,5 @@ function showNextLine() {
     }, 1000);
   } else {
     nextBtn.style.display = 'inline-block';
-  }
-}
-
-// --- Scene 2 (Owl + Letter + Birthday Text) ---
-nextBtn.addEventListener('click', startScene2);
-
-function startScene2() {
-  document.querySelector('.story-container').style.display = 'none';
-  document.querySelector('.start-container').style.display = 'none';
-  document.getElementById('sparkle-canvas').style.display = 'none';
-  document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
-  document.getElementById('scene2').style.display = 'block';
-
-  setTimeout(() => {
-    owl.style.transform = 'translate(-50%, -50%) scale(2.5)';
-  }, 200);
-
-  setTimeout(() => {
-    owl.style.opacity = 0;
-  }, 3500);
-
-  setTimeout(() => {
-    letter.style.display = 'block';
-    gryffindorLogo.style.display = 'block';
-  }, 5000);
-
-  setTimeout(() => {
-    showBirthdayLines();
-  }, 5500);
-}
-
-// Birthday Text Line by Line
-const birthdayLines = [
-  "Hogwarts and Gryffindor",
-  "send their warmest wishes to you!",
-  "Happy Birthday Lovely Shamma",
-  "and may your magic grow stronger every year!"
-];
-
-let birthdayLineIndex = 0;
-
-function showBirthdayLines() {
-  if (birthdayLineIndex < birthdayLines.length) {
-    const newLine = document.createElement('div');
-    newLine.textContent = birthdayLines[birthdayLineIndex];
-    newLine.style.opacity = 0;
-    newLine.style.transition = "opacity 2s ease";
-    newLine.style.marginTop = "10px";
-
-    birthdayText.appendChild(newLine);
-
-    setTimeout(() => {
-      newLine.style.opacity = 1;
-    }, 100);
-
-    birthdayLineIndex++;
-    setTimeout(showBirthdayLines, 2000);
   }
 }
