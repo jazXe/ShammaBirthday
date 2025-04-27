@@ -1,11 +1,11 @@
-// --- Scene 1 variables ---
+// --- Scene 1 Variables ---
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
 const calendar = document.getElementById('calendar');
 const shammaImg = document.getElementById('shamma-img');
 const shammaName = document.getElementById('shamma-name');
 
-// --- Scene 2 variables ---
+// --- Scene 2 Variables ---
 const owl = document.getElementById('owl');
 const letter = document.getElementById('letter');
 const birthdayText = document.getElementById('birthday-text');
@@ -23,98 +23,74 @@ const storyLines = [
 
 let currentLine = 0;
 
-// --- Function to show story lines ---
+// Show storylines
 function showNextLine() {
   if (currentLine < storyLines.length) {
-    // Fade out current text first
     storyText.style.opacity = 0;
-    shammaName.style.opacity = 0; // Always fade out Shamma too
+    shammaName.style.opacity = 0;
 
     setTimeout(() => {
-      // Always set new small story line text
       storyText.textContent = storyLines[currentLine];
-      storyText.style.opacity = 1; // Fade it back in
+      storyText.style.opacity = 1;
 
-      // 📅 Show calendar at April 28
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
         shammaImg.style.display = 'none';
         shammaName.style.display = 'none';
       }
 
-      // 📜 At Whispers
       if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
         calendar.style.display = 'none';
         shammaImg.style.display = 'block';
         shammaName.style.display = 'none';
       }
 
-      // ✨ At celebration, also show glowing Shamma
-      /* if (storyLines[currentLine].includes("A celebration was brewing")) {
-        shammaName.style.display = 'block'; // Show big Shamma
-        setTimeout(() => {
-          shammaName.style.opacity = 1; // Fade in smoothly
-        }, 200);
-      }*/
-      // ✨ At celebration, also show glowing Shamma
       if (storyLines[currentLine].includes("A celebration was brewing")) {
-        storyText.textContent = storyLines[currentLine]; // Small story text
-        storyText.style.opacity = 1; // Fade in small text
-      
         setTimeout(() => {
           shammaName.style.display = 'block';
           setTimeout(() => {
-            shammaName.style.opacity = 1; // After delay, fade in Shamma smoothly
-          }, 200); // Fade in after showing
-        }, 800); // 🕰️ Small delay before showing Shamma
+            shammaName.style.opacity = 1;
+          }, 200);
+        }, 800);
       }
-
 
       currentLine++;
       setTimeout(showNextLine, 3500);
-
-    }, 1000); // Wait 1s for fade out
+    }, 1000);
   } else {
     nextBtn.style.display = 'inline-block';
   }
 }
 
-// 🎯 Scene 2 (Owl + Letter + Text Line by Line)
+// --- Scene 2 (Owl + Letter + Birthday Text) ---
 nextBtn.addEventListener('click', startScene2);
 
 function startScene2() {
-  // Hide Scene 1
   document.querySelector('.story-container').style.display = 'none';
   document.querySelector('.start-container').style.display = 'none';
   document.getElementById('sparkle-canvas').style.display = 'none';
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
-
-  // Show Scene 2
   document.getElementById('scene2').style.display = 'block';
 
-  // Start Owl grow
   setTimeout(() => {
     owl.style.transform = 'translate(-50%, -50%) scale(2.5)';
   }, 200);
 
-  // Fade Owl
   setTimeout(() => {
     owl.style.opacity = 0;
   }, 3500);
 
-  // Show Letter after Owl gone
   setTimeout(() => {
     letter.style.display = 'block';
     gryffindorLogo.style.display = 'block';
   }, 5000);
 
-  // Start showing Birthday Text line by line
   setTimeout(() => {
     showBirthdayLines();
   }, 5500);
 }
 
-// 🎯 Lines to appear one by one
+// Birthday Text Line by Line
 const birthdayLines = [
   "Hogwarts and Gryffindor",
   "send their warmest wishes to you!",
@@ -132,14 +108,13 @@ function showBirthdayLines() {
     newLine.style.transition = "opacity 2s ease";
     newLine.style.marginTop = "10px";
 
-    document.getElementById('birthday-text').appendChild(newLine);
+    birthdayText.appendChild(newLine);
 
     setTimeout(() => {
       newLine.style.opacity = 1;
     }, 100);
 
     birthdayLineIndex++;
-    setTimeout(showBirthdayLines, 2000); // Show next line after 2s
+    setTimeout(showBirthdayLines, 2000);
   }
 }
-
