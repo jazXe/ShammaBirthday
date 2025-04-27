@@ -60,3 +60,37 @@ function showNextLine() {
     nextBtn.style.display = 'inline-block';
   }
 }
+
+
+// 🎯 When Continue button clicked
+nextBtn.addEventListener('click', startScene2);
+
+function startScene2() {
+  // Fade out Scene 1
+  document.querySelector('.story-container').style.display = 'none';
+  document.querySelector('.start-container').style.display = 'none';
+  document.getElementById('sparkle-canvas').style.display = 'none';
+  document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
+
+  // Show Scene 2
+  document.getElementById('scene2').style.display = 'block';
+
+  // Start Owl animation
+  const owl = document.getElementById('owl');
+  setTimeout(() => {
+    owl.style.transform = 'translate(-50%, -50%) scale(2)';
+  }, 200); // Start growing after short time
+
+  // After Owl grows, fade Owl away
+  setTimeout(() => {
+    owl.style.opacity = 0;
+  }, 3500); // Fade after 3.5 seconds
+
+  // After Owl faded, show Letter + Birthday Text + Gryffindor Stamp
+  setTimeout(() => {
+    document.getElementById('letter').style.display = 'block';
+    document.getElementById('gryffindor-logo').style.display = 'block';
+    document.getElementById('birthday-text').style.display = 'block';
+  }, 5500); // After Owl gone
+}
+
