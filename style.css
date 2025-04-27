@@ -128,17 +128,18 @@ body {
 
 /* Birthday Message */
 .birthday-message {
-  position: absolute;
-  top: 20%;
-  width: 80%;
-  text-align: center;
-  color: #f4b400;
+  position: relative; /* same as story text */
   font-family: 'Bigelow Rules', cursive;
-  font-size: 2em;
+  font-size: 2.2em; /* little smaller if you want */
+  color: #f4b400;
+  text-align: center;
+  margin-top: 20px;
+  width: 80%;
   opacity: 0;
   z-index: 6;
   transition: opacity 2s ease;
 }
+
 
 .highlight {
   font-size: 2.5em;
