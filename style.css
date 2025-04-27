@@ -1,15 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #3b2742;
+  background-color: #3b2742; /* Dark purple */
   font-family: 'Bigelow Rules', cursive;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  color: #fefae0;
+  color: #fefae0; /* Soft cream color */
 }
 
-/* Sparkles */
+/* Sparkles canvas */
 #sparkle-canvas {
   position: absolute;
   top: 0;
@@ -27,8 +27,14 @@ body {
   z-index: 1;
   animation: floatDragon 4s ease-in-out infinite;
 }
-.dragon-left { left: 5%; }
-.dragon-right { right: 5%; }
+
+.dragon-left {
+  left: 5%;
+}
+
+.dragon-right {
+  right: 5%;
+}
 
 @keyframes floatDragon {
   0% { transform: translateY(0px); }
@@ -36,7 +42,7 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* Start Button */
+/* Start button */
 .start-container {
   position: absolute;
   top: 40%;
@@ -62,6 +68,20 @@ body {
   to { box-shadow: 0 0 20px #f4b400; }
 }
 
+/* Story container */
+.story-container {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
 /* Story text */
 .story-text {
   font-size: 2.5em;
@@ -69,8 +89,9 @@ body {
   transition: opacity 1.5s ease;
 }
 
-/* Shamma name */
+/* Big glowing Shamma */
 .shamma-name {
+  font-family: 'Bigelow Rules', cursive;
   font-size: 4em;
   color: #f9dfad;
   text-shadow: 0 0 10px #f9dfad, 0 0 20px #f9dfad;
@@ -79,20 +100,21 @@ body {
   transition: opacity 1.5s ease;
 }
 
-/* Images */
-.calendar-img, .shamma-img {
-  width: 300px;
+/* Shamma image */
+.shamma-img {
+  width: 250px;
   margin-top: 20px;
   animation: float 3s ease-in-out infinite;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+/* Calendar image */
+.calendar-img {
+  width: 300px;
+  margin-top: 10px;
+  animation: float 3s ease-in-out infinite;
 }
 
-/* Next button */
+/* Continue button */
 .next-btn {
   margin-top: 40px;
   padding: 10px 30px;
@@ -103,51 +125,5 @@ body {
   border-radius: 10px;
   cursor: pointer;
   color: #3b2742;
-}
-
-/* Scene 2 Owl */
-.owl {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  transform: translate(-50%, -50%) scale(0.5);
-  opacity: 1;
-  transition: transform 3s ease, opacity 2s ease;
-  z-index: 5;
-}
-
-/* Letter and text */
-.letter-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
-}
-
-.letter {
-  width: 500px;
-  z-index: 2;
-}
-
-.gryffindor-logo {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 70px;
-  z-index: 3;
-}
-
-.birthday-text {
-  position: absolute;
-  top: 30%;
-  width: 70%;
-  text-align: center;
-  color: #f4b400;
-  font-family: 'Bigelow Rules', cursive;
-  font-size: 1.8em;
-  z-index: 4;
-  line-height: 1.5;
+  animation: glow 1s infinite alternate;
 }
