@@ -1,6 +1,8 @@
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
 const calendar = document.getElementById('calendar');
+const shammaImg = document.getElementById('shamma-img');
+const shammaName = document.getElementById('shamma-name');
 
 const storyLines = [
   "Once upon a time...",
@@ -9,7 +11,7 @@ const storyLines = [
   "On a fateful day, April 28th...",
   "The skies were alive with the flight of dragons...",
   "Whispers traveled across the halls of Hogwarts...",
-  "A celebration was brewing for a young witch named Shamma."
+  "A celebration was brewing for a young witch named..."
 ];
 
 let currentLine = 0;
@@ -21,8 +23,20 @@ function showNextLine() {
       storyText.textContent = storyLines[currentLine];
       storyText.style.opacity = 1;
 
+      // Special actions at certain lines
       if (storyLines[currentLine].includes("April 28th")) {
         calendar.style.display = 'block';
+      }
+
+      if (storyLines[currentLine].includes("Whispers traveled across the halls of Hogwarts")) {
+        // Remove calendar and show shamma.png instead
+        calendar.style.display = 'none';
+        shammaImg.style.display = 'block';
+      }
+
+      if (storyLines[currentLine].includes("A celebration was brewing")) {
+        // Show big Shamma glowing text
+        shammaName.style.display = 'block';
       }
 
       currentLine++;
