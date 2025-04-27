@@ -105,16 +105,16 @@ body {
   color: #3b2742;
 }
 
-/* Scene 2 Owl */
+/* Owl */
 .owl {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100px; /* 🆙 start slightly bigger */
+  width: 100px;
   transform: translate(-50%, -50%) scale(0.5);
   opacity: 1;
   transition: transform 3s ease, opacity 2s ease;
-  z-index: 5; /* Higher than background */
+  z-index: 5;
 }
 
 /* Letter Container */
@@ -127,33 +127,25 @@ body {
   margin-top: 50px;
 }
 
-/* Letter parchment */
+/* Letter */
 .letter {
-  width: 650px; /* 🆙 make parchment much bigger */
-  z-index: 2; /* Under birthday text */
-}
-
-/* Gryffindor Logo (stamp) */
-.gryffindor-logo {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 70px;
-  z-index: 3; /* Above parchment, but under text */
+  width: 650px; /* Make parchment larger */
+  z-index: 2;
 }
 
 /* Birthday Text */
 .birthday-text {
   position: absolute;
-  top: 25%; /* 🆙 move text higher to center better */
+  top: 25%;
   width: 80%;
   text-align: center;
   color: #f4b400;
   font-family: 'Bigelow Rules', cursive;
   font-size: 2em;
-  z-index: 10; /* 🆙 HIGHEST to appear ON TOP */
+  z-index: 6; /* 🆙 Higher than letter */
   line-height: 1.5;
   opacity: 0;
   transition: opacity 1.5s ease;
 }
 
+/* (REMOVE gryffindor-logo class, not needed anymore) */
