@@ -61,7 +61,7 @@ function startScene2() {
   scene2.style.display = 'flex';
 
   setTimeout(() => {
-    owl.style.transform = 'translate(-50%, -50%) scale(15)'; // GROW owl 15x
+    owl.style.transform = 'translate(-50%, -50%) scale(2)';
   }, 200);
 
   setTimeout(() => {
