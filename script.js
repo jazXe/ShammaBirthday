@@ -50,12 +50,25 @@ function showNextLine() {
       }
 
       // ✨ At celebration, also show glowing Shamma
-      if (storyLines[currentLine].includes("A celebration was brewing")) {
+      /* if (storyLines[currentLine].includes("A celebration was brewing")) {
         shammaName.style.display = 'block'; // Show big Shamma
         setTimeout(() => {
           shammaName.style.opacity = 1; // Fade in smoothly
         }, 200);
+      }*/
+      // ✨ At celebration, also show glowing Shamma
+      if (storyLines[currentLine].includes("A celebration was brewing")) {
+        storyText.textContent = storyLines[currentLine]; // Small story text
+        storyText.style.opacity = 1; // Fade in small text
+      
+        setTimeout(() => {
+          shammaName.style.display = 'block';
+          setTimeout(() => {
+            shammaName.style.opacity = 1; // After delay, fade in Shamma smoothly
+          }, 200); // Fade in after showing
+        }, 800); // 🕰️ Small delay before showing Shamma
       }
+
 
       currentLine++;
       setTimeout(showNextLine, 3500);
@@ -66,34 +79,67 @@ function showNextLine() {
   }
 }
 
-// --- 🎯 Scene 2 (Owl + Letter) ---
-// When Continue button clicked
+// 🎯 Scene 2 (Owl + Letter + Text Line by Line)
 nextBtn.addEventListener('click', startScene2);
 
 function startScene2() {
-  // Fade out Scene 1 elements
+  // Hide Scene 1
   document.querySelector('.story-container').style.display = 'none';
   document.querySelector('.start-container').style.display = 'none';
   document.getElementById('sparkle-canvas').style.display = 'none';
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
 
-  // Show Scene 2 container
+  // Show Scene 2
   document.getElementById('scene2').style.display = 'block';
 
-  // Start Owl growing animation
+  // Start Owl grow
   setTimeout(() => {
-    owl.style.transform = 'translate(-50%, -50%) scale(2)';
-  }, 200); // Start zoom after short time
+    owl.style.transform = 'translate(-50%, -50%) scale(2.5)';
+  }, 200);
 
-  // Fade out Owl after growing
+  // Fade Owl
   setTimeout(() => {
     owl.style.opacity = 0;
-  }, 3500); // After 3.5s
+  }, 3500);
 
-  // After Owl faded, show Letter + Birthday Text + Gryffindor Logo
+  // Show Letter after Owl gone
   setTimeout(() => {
     letter.style.display = 'block';
-    birthdayText.style.display = 'block';
     gryffindorLogo.style.display = 'block';
-  }, 5500); // After Owl disappears
+  }, 5000);
+
+  // Start showing Birthday Text line by line
+  setTimeout(() => {
+    showBirthdayLines();
+  }, 5500);
 }
+
+// 🎯 Lines to appear one by one
+const birthdayLines = [
+  "Hogwarts and Gryffindor",
+  "send their warmest wishes to you!",
+  "Happy Birthday Lovely Shamma",
+  "and may your magic grow stronger every year!"
+];
+
+let birthdayLineIndex = 0;
+
+function showBirthdayLines() {
+  if (birthdayLineIndex < birthdayLines.length) {
+    const newLine = document.createElement('div');
+    newLine.textContent = birthdayLines[birthdayLineIndex];
+    newLine.style.opacity = 0;
+    newLine.style.transition = "opacity 2s ease";
+    newLine.style.marginTop = "10px";
+
+    document.getElementById('birthday-text').appendChild(newLine);
+
+    setTimeout(() => {
+      newLine.style.opacity = 1;
+    }, 100);
+
+    birthdayLineIndex++;
+    setTimeout(showBirthdayLines, 2000); // Show next line after 2s
+  }
+}
+
