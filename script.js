@@ -1,15 +1,14 @@
-// --- Scene 1 Variables ---
+// Scene 1
 const storyText = document.getElementById('story-text');
 const nextBtn = document.getElementById('next-btn');
 const calendar = document.getElementById('calendar');
 const shammaImg = document.getElementById('shamma-img');
 const shammaName = document.getElementById('shamma-name');
 
-// --- Scene 2 Variables ---
+// Scene 2
 const owl = document.getElementById('owl');
 const letter = document.getElementById('letter');
 const birthdayText = document.getElementById('birthday-text');
-const gryffindorLogo = document.getElementById('gryffindor-logo');
 
 const storyLines = [
   "Once upon a time...",
@@ -23,7 +22,7 @@ const storyLines = [
 
 let currentLine = 0;
 
-// Show storylines
+// Show Story
 function showNextLine() {
   if (currentLine < storyLines.length) {
     storyText.style.opacity = 0;
@@ -62,7 +61,7 @@ function showNextLine() {
   }
 }
 
-// --- Scene 2 (Owl + Letter + Birthday Text) ---
+// Scene 2
 nextBtn.addEventListener('click', startScene2);
 
 function startScene2() {
@@ -72,28 +71,24 @@ function startScene2() {
   document.querySelectorAll('.dragon').forEach(dragon => dragon.style.display = 'none');
   document.getElementById('scene2').style.display = 'block';
 
-  // Owl appear + grow
   setTimeout(() => {
     owl.style.transform = 'translate(-50%, -50%) scale(3.2)';
   }, 200);
 
-  // Owl fades away
   setTimeout(() => {
     owl.style.opacity = 0;
   }, 3500);
 
-  // Letter appears
   setTimeout(() => {
     letter.style.display = 'block';
   }, 5000);
 
-  // Start Birthday text
   setTimeout(() => {
     showBirthdayLines();
   }, 5500);
 }
 
-// Birthday lines one by one
+// Birthday Lines
 const birthdayLines = [
   "Hogwarts and Gryffindor",
   "send their warmest wishes to you!",
