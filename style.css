@@ -36,22 +36,43 @@ body {
   right: 5%;
 }
 
-/* Floating dragons animation */
 @keyframes floatDragon {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Story text container */
+/* Start button */
+.start-container {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.start-btn {
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 2em;
+  padding: 15px 40px;
+  background-color: #f4b400;
+  border: none;
+  border-radius: 15px;
+  color: #3b2742;
+  cursor: pointer;
+  animation: glow 1s infinite alternate;
+}
+
+/* Story container */
 .story-container {
   position: relative;
   z-index: 2;
   height: 100vh;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
   padding: 20px;
 }
@@ -63,21 +84,28 @@ body {
   transition: opacity 2s ease;
 }
 
+/* Calendar title */
+.calendar-title {
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 2em;
+  color: #fefae0;
+  margin-bottom: 10px;
+}
+
 /* Calendar image */
 .calendar-img {
   width: 300px;
-  margin-top: 20px;
+  margin-top: 10px;
   animation: float 3s ease-in-out infinite;
 }
 
-/* Floating animation */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Next button */
+/* Continue button */
 .next-btn {
   margin-top: 40px;
   padding: 10px 30px;
@@ -91,7 +119,6 @@ body {
   animation: glow 1s infinite alternate;
 }
 
-/* Glow button animation */
 @keyframes glow {
   from { box-shadow: 0 0 5px #f4b400; }
   to { box-shadow: 0 0 20px #f4b400; }
